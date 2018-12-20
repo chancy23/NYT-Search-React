@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Results from './components/Results';
 import Search from './components/Search';
-// import Saved from './components/Saved';
+import Saved from './components/Saved';
 import './App.css';
 import API from './utils/API';
 
@@ -17,6 +17,7 @@ class App extends Component {
   componentDidMount() {
     console.log('componenet mounted');
     //if saved articles call the method to load them to the page
+    // this.getSavedArticles();
   };
 
   //need to include the this.state.query, startYear and endYear as params
@@ -47,14 +48,30 @@ class App extends Component {
   };
 
   //need to fix this route, look at gitlab activities
-  handleSaveArticle = (event) => {
-    event.preventDefault();
-    //call api method to save article
-    API.postArticle()
-    .then((response) => {
-      this.setState({savedArticles: response})
+  handleSaveArticle = (id) => {
+    //this gets the props._id for the article that the button was clicked on and grabs the data associated with it
+    const findArticleByID = this.state.results.find((el) => el._id === id);
+    // console.log('findarticle id', findArticleByID);
+    const articleToSave = {title: findArticleByID.headline.main, url: findArticleByID.web_url, date: findArticleByID.pub_date};
+    console.log('article to save data', articleToSave);
+    //call api method to save article (need to send the articles headline, link, and pub date)
+    API.saveArticle(articleToSave)
+    //once data is sent, render the saved articles to its coponent
+    .then(this.getSavedArticles())
+    .catch(err => console.log(err))
+  };
+
+  getSavedArticles = () => {
+    API.getSavedArticles()
+    .then(res => {
+      console.log("res from db", res);
+      this.setState({savedArticles: res})
     })
     .catch(err => console.log(err))
+  };
+
+  handleDelete = () => {
+    //call the API to run the delete method
   };
 
   render() {
@@ -69,9 +86,13 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
         />
         <Results 
-        data={this.state.results}
-        handleSaveArticle={this.handleSaveArticle} />
-        {/* make a saved articles component */}
+          data={this.state.results}
+          handleSaveArticle={this.handleSaveArticle} 
+        />
+        <Saved 
+          data={this.state.savedArticles}
+          handleDelete={this.handleDelete}
+        />
       </div>
     
     );

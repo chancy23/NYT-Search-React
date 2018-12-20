@@ -31,16 +31,13 @@ const Results = (props) => {
     return (
         <div>
             <h3>Results Area</h3>
-            {console.log('props', props)}
-           
             {props.data.map((article, index) => (
                 <div className='article' key={index}>
                     <h5>{article.headline.main}</h5>
                     <h6>Published: {moment(article.pub_date).format('MM/DD/YYYY h:MMA')}</h6>
                     <p><a href={article.web_url} rel='noopener noreferrer' target='_blank'>Link to Article</a></p>
-                    <button onClick={props.handleSaveArticle}>Save Article</button>
-                </div> 
-                )
+                    <button onClick={() => props.handleSaveArticle(article._id)}>Save Article</button>
+                </div>)
             )}
         </div>
     );

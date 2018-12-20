@@ -1,12 +1,11 @@
 import React from 'react';
 
 const Search = (props) => {
-    console.log('query', props.query);
     return (
         <div>
             <h3>Search Area</h3>
             <form>
-                {/* wrap in a form element and make separate componnent */}
+                {/* wrap in a form element and make separate component */}
                 <input
                     name='query'
                     value={props.query}
@@ -27,7 +26,7 @@ const Search = (props) => {
                 />
                 <button name='submit' onClick={props.handleSubmit}>Submit</button>
             </form>
-          </div>
+        </div>
     )
 };
 
