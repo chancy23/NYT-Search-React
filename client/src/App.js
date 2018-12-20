@@ -17,7 +17,7 @@ class App extends Component {
   componentDidMount() {
     console.log('componenet mounted');
     //if saved articles call the method to load them to the page
-    // this.getSavedArticles();
+    this.getSavedArticles();
   };
 
   //need to include the this.state.query, startYear and endYear as params
@@ -65,7 +65,7 @@ class App extends Component {
     API.getSavedArticles()
     .then(res => {
       console.log("res from db", res);
-      this.setState({savedArticles: res})
+      this.setState({savedArticles: res.data})
     })
     .catch(err => console.log(err))
   };

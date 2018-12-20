@@ -17,7 +17,7 @@ module.exports = {
     create: function (req, res) {
         console.log(req.body)
         console.log('saving article to db');
-        Article
+        db.Article
             .create(req.body)
             .then(doc => res.json(doc))
             .catch(err => res.status(422).json(err))
