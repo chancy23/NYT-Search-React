@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from './components/Navbar';
 import Results from './components/Results';
 import Search from './components/Search';
 import Saved from './components/Saved';
@@ -83,24 +84,25 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>NYT Search React App</h1>
-        <Search 
-          query={this.state.query}
-          startYear={this.state.startYear}
-          endYear={this.state.endYear}
-          handleInput={this.handleInput}
-          handleSubmit={this.handleSubmit}
-        />
-        <Results 
-          data={this.state.results}
-          handleSaveArticle={this.handleSaveArticle} 
-        />
-        <Saved 
-          data={this.state.savedArticles}
-          handleDelete={this.handleDelete}
-        />
+        <Navbar />
+        <div className='container'>
+          <Search 
+            query={this.state.query}
+            startYear={this.state.startYear}
+            endYear={this.state.endYear}
+            handleInput={this.handleInput}
+            handleSubmit={this.handleSubmit}
+          />
+          <Results 
+            data={this.state.results}
+            handleSaveArticle={this.handleSaveArticle} 
+          />
+          <Saved 
+            data={this.state.savedArticles}
+            handleDelete={this.handleDelete}
+          />
+        </div>
       </div>
-    
     );
   }
 }

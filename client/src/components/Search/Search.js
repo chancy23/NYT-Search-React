@@ -5,7 +5,7 @@ const Search = (props) => {
         <div>
             <div className="row">
                 <div className="col s12">
-                    <h3>Search Area</h3>
+                    <h4>Search</h4>
                 </div>
             </div>
             <div className="row">
