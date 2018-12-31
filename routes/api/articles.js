@@ -3,16 +3,12 @@ const router = require('express').Router();
 const articleController = require('../../controllers/articleController');
 
 router
-    .route('/articles')
-    .get(articleController.findAll)
-    .post(articleController.create);
+  .route('/articles')
+  .get(articleController.findAll)
+  .post(articleController.create);
+  
+router
+  .route('/articles/:id')
+  .delete(articleController.delete);
 
-//to save article to the db
-// router.post('/', articleController.create);
-
-// router.delete('/', function (req, res) {
-//     res.send('Birds home page')
-// });
-
-
-module.exports = router
+module.exports = router;

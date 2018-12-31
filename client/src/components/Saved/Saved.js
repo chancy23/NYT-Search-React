@@ -11,7 +11,7 @@ const Saved = (props) => {
                     <h5>{article.title}</h5>
                     <h6>Published: {moment(article.date).format('MM/DD/YYYY h:MMA')}</h6>
                     <p><a href={article.url} rel='noopener noreferrer' target='_blank'>Link to Article</a></p>
-                    <button id={article._id} onClick={props.handleDelete}>Delete Article</button>
+                    <button onClick={() => props.handleDelete(article._id)}>Delete Article</button>
                 </div>)
             )}
         </div>
