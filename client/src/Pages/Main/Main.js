@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Results from '../../components/Results';
 import Search from '../../components/Search';
 import Saved from '../../components/Saved';
-// import './App.css';
+import './Main.css';
 import API from '../../utils/API';
 
 class Main extends Component {
@@ -83,28 +83,33 @@ class Main extends Component {
   render() {
     return (
       <div className='container'>
-        <Search
-          query={this.state.query}
-          startYear={this.state.startYear}
-          endYear={this.state.endYear}
-          handleInput={this.handleInput}
-          handleSubmit={this.handleSubmit}
-        />
-        {this.state.results.length ? (
-          <Results
-            data={this.state.results}
-            handleSaveArticle={this.handleSaveArticle}
-          /> ) : (
-            <h5>No Results to Display, use Search Above</h5>
-          )}
-        {this.state.savedArticles.length ? (
-          <Saved
-            data={this.state.savedArticles}
-            handleDelete={this.handleDelete}
-          /> ) : (
-            <h5>No Saved Articles</h5>
-          )}
-        
+        <div className='row'>
+          <div className='col s12 m4 searchArea'>
+            <Search
+              query={this.state.query}
+              startYear={this.state.startYear}
+              endYear={this.state.endYear}
+              handleInput={this.handleInput}
+              handleSubmit={this.handleSubmit}
+            />
+          </div>
+          <div className='col s12 m8 displayArea'>
+            {this.state.results.length ? (
+              <Results
+                data={this.state.results}
+                handleSaveArticle={this.handleSaveArticle}
+              /> ) : (
+                <h5>Use the search form to find articles from the New York Times</h5>
+              )}
+            {this.state.savedArticles.length ? (
+              <Saved
+                data={this.state.savedArticles}
+                handleDelete={this.handleDelete}
+              /> ) : (
+                <h5>You don't have any saved articles at this time.</h5>
+              )}
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,46 +1,23 @@
 import React from 'react';
 import moment from 'moment';
-// import React, {Component} from 'react';
-
-// class Results extends Component {
-//     state = {
-//         results: [], 
-//         saveArticle: false
-//     }
-//     render() {
-//         return (
-//             <div>
-//                 <h3>Results Area</h3>
-//                 {/* {console.log('props', props)} */}
-            
-//                 {this.state.results.map((article, index) => (
-//                     <div className='article' key={index}>
-//                         <h5>{article.headline.main}</h5>
-//                         <h6>Published: {article.pub_date}</h6>
-//                         <p><a href={article.web_url} rel='noopener noreferrer' target='_blank'>Link to Article</a></p>
-//                         <button>Save Article</button>
-//                     </div> 
-//                     )
-//                 )}
-//             </div>
-//         )
-//     }
-// };
+import './Results.css';
 
 const Results = (props) => {
-    return (
-        <div>
-            <h3>Results Area</h3>
-            {props.data.map((article, index) => (
-                <div className='article' key={index}>
-                    <h5>{article.headline.main}</h5>
-                    <h6>Published: {moment(article.pub_date).format('MM/DD/YYYY h:MMA')}</h6>
-                    <p><a href={article.web_url} rel='noopener noreferrer' target='_blank'>Link to Article</a></p>
-                    <button onClick={() => props.handleSaveArticle(article._id)}>Save Article</button>
-                </div>)
-            )}
-        </div>
-    );
+  return (
+    <div className='row'>
+      <div className='col s12 header'>
+        <h4>Search Results...</h4>
+      </div>
+      {props.data.map((article, index) => (
+        <div className='col s12 article' key={index}>
+          <h5>{article.headline.main}</h5>
+          <p>Published: {moment(article.pub_date).format('MM/DD/YYYY h:MMA')}</p>
+          <a className='waves-effect waves-light btn-small readBtn' href={article.web_url} rel='noopener noreferrer' target='_blank'>Read</a>
+          <button className='waves-effect waves-light btn-small saveBtn' onClick={() => props.handleSaveArticle(article._id)}>Save</button>
+        </div>)
+      )}
+    </div>
+  );
 };
 
 export default Results;

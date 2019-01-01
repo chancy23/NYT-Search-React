@@ -1,21 +1,23 @@
 import React from 'react';
 import moment from 'moment';
+import './Saved.css'
 
 const Saved = (props) => {
-    return (
-        <div>
-            <h3>Saved Articles</h3>
-            {/* .map() the saved articles array and render in this section */}
-            {props.data.map((article, index) => (
-                <div className='article' key={index}>
-                    <h5>{article.title}</h5>
-                    <h6>Published: {moment(article.date).format('MM/DD/YYYY h:MMA')}</h6>
-                    <p><a href={article.url} rel='noopener noreferrer' target='_blank'>Link to Article</a></p>
-                    <button onClick={() => props.handleDelete(article._id)}>Delete Article</button>
-                </div>)
-            )}
-        </div>
-    )
+  return (
+    <div className='row'>
+      <div className='col s12 header'>
+        <h4>Saved Articles</h4>
+      </div>
+      {props.data.map((article, index) => (
+        <div className='col s12 article' key={index}>
+          <h5>{article.title}</h5>
+          <p>Published: {moment(article.date).format('MM/DD/YYYY h:MMA')}</p>
+          <a className='waves-effect waves-light btn-small readBtn' href={article.url} rel='noopener noreferrer' target='_blank'>Read</a>
+          <button className='waves-effect waves-light btn-small deleteBtn' onClick={() => props.handleDelete(article._id)}>Delete</button>
+        </div>)
+      )}
+    </div>
+  )
 };
 
 export default Saved

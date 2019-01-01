@@ -1,17 +1,18 @@
 import React from 'react';
+import './Search.css';
 
 const Search = (props) => {
     return (
         <div>
             <div className="row">
-                <div className="col s12">
+                <div className="col s12 center header">
                     <h4>Search</h4>
                 </div>
             </div>
             <div className="row">
                 <form className="col s12">
                     <div className="row">
-                        <div className="input-field col s12 m4">
+                        <div className="input-field col s12">
                             <input
                             name='query'
                             value={props.query}
@@ -20,9 +21,8 @@ const Search = (props) => {
                             />
                         </div>
                     </div>
-
                     <div className="row">
-                        <div className="input-field col s4 m2">
+                        <div className="input-field col s6">
                             <input
                             name='startYear'
                             value={props.startYear}
@@ -30,10 +30,7 @@ const Search = (props) => {
                             placeholder='Start Year'
                             />
                         </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="input-field col s4 m2">
+                        <div className="input-field col s6">
                             <input
                             name='endYear'
                             value={props.endYear}
@@ -42,8 +39,7 @@ const Search = (props) => {
                             />
                         </div>
                     </div>
-
-                    <button className='btn waves-effect waves-light' name='submit' onClick={props.handleSubmit}>Submit</button>
+                    <button className='btn waves-effect waves-light submitBtn' name='submit' onClick={props.handleSubmit}>Submit</button>
                 </form>
             </div>
         </div>
