@@ -14,6 +14,7 @@ const Saved = (props) => {
           <p>Published: {moment(article.date).format('MM/DD/YYYY h:MMA')}</p>
           <a className='waves-effect waves-light btn-small readBtn' href={article.url} rel='noopener noreferrer' target='_blank'>Read</a>
           <button className='waves-effect waves-light btn-small deleteBtn' onClick={() => props.handleDelete(article._id)}>Delete</button>
+          <hr />
         </div>)
       )}
     </div>

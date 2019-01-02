@@ -3,26 +3,26 @@ import './Search.css';
 
 const Search = (props) => {
     return (
-        <div>
-            <div className="row">
-                <div className="col s12 center header">
-                    <h4>Search</h4>
+        <div className='searchForm'>
+            <div className='row'>
+                <div className='col s12 center'>
+                    <h5>Find Articles</h5>
                 </div>
             </div>
-            <div className="row">
-                <form className="col s12">
-                    <div className="row">
-                        <div className="input-field col s12">
+            <div className='row'>
+                <form className='col s12'>
+                    <div className='row'>
+                        <div className='input-field col s12'>
                             <input
                             name='query'
                             value={props.query}
                             onChange={props.handleInput}
-                            placeholder='Search Term'
+                            placeholder='Key Word(s)'
                             />
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="input-field col s6">
+                    <div className='row'>
+                        <div className='input-field col s6'>
                             <input
                             name='startYear'
                             value={props.startYear}
@@ -30,7 +30,7 @@ const Search = (props) => {
                             placeholder='Start Year'
                             />
                         </div>
-                        <div className="input-field col s6">
+                        <div className='input-field col s6'>
                             <input
                             name='endYear'
                             value={props.endYear}

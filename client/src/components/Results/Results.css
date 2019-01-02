@@ -1,6 +1,13 @@
 
-
 .saveBtn {
-    background-color: gold;
+    background-color: #386d3b;
     margin-bottom: 2%;
+}
+
+.saveBtn:hover {
+    background-color: #3f9c44;
+}
+
+.saveBtn:focus {
+    background-color: #386d3b;
 }

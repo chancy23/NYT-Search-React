@@ -99,14 +99,14 @@ class Main extends Component {
                 data={this.state.results}
                 handleSaveArticle={this.handleSaveArticle}
               /> ) : (
-                <h5>Use the search form to find articles from the New York Times</h5>
+                <h5 className="noArticles">Use the form to find articles from the New York Times.</h5>
               )}
             {this.state.savedArticles.length ? (
               <Saved
                 data={this.state.savedArticles}
                 handleDelete={this.handleDelete}
               /> ) : (
-                <h5>You don't have any saved articles at this time.</h5>
+                <h5 className="noArticles">You don't have any saved articles at this time.</h5>
               )}
           </div>
         </div>

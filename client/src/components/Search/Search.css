@@ -1,3 +1,27 @@
-.submitBtn {
-    background-color: blue;
+
+
+.searchForm {
+    background-color: #F2F2F2;
+    padding: 1% 5% 1% 5%;
+}
+
+/* makes the input lines */
+input:not([text]):focus:not([readonly]) {
+  border-bottom:1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+/* changes text color of form text to match the lines of the input */
+/* input:not([type]) {
+    color: white;
+} */
+
+
+.submitBtn,
+.submitBtn:focus {
+    background-color: #858CA5;
+}
+
+.submitBtn:hover {
+    background-color: #386d3b;
 }
