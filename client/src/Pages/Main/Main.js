@@ -41,9 +41,23 @@ class Main extends Component {
     });
   };
 
+  //clear the search fields-used in the handlesubmit
+  resetForm = () => {
+    this.setState({
+      query: '',
+      startYear: '',
+      endYear: ''
+    });
+    document.getElementById('keyWord').setAttribute('class', 'validate');
+    document.getElementById('startYear').setAttribute('class', 'validate');
+    document.getElementById('endYear').setAttribute('class', 'validate');
+
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
     this.getArticles();
+    this.resetForm();
   };
 
   //need to fix this route, look at gitlab activities
