@@ -7,6 +7,8 @@ The results will display along with options to read each artcle (links to the NY
 
 The Saved Articles section of the page shows the same article detail (headline, publication date/time, and Read button) as the Results display, as well as a button to delete the article, which will remove the article from the page (and our database).
 
+Deployed at: https://nytsearch010319.herokuapp.com/
+
 ## Video Demo and App Images
   - [Search Results Screenshot](screenshots/NYT_Search_SavedArticles.png)
   - [Saved Articles Screenshot](screenshots/NYT_Search_SavedArticles.png)
