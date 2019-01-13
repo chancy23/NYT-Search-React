@@ -10,7 +10,7 @@ The Saved Articles section of the page shows the same article detail (headline, 
 ## Video Demo and App Images
   - [Search Results Screenshot](screenshots/NYT_Search_SavedArticles.png)
   - [Saved Articles Screenshot](screenshots/NYT_Search_SavedArticles.png)
-  - Video Demo: https://drive.google.com/file/d/1mfJ8dyLgzGOlbFWd3mXdzOBdqipK88Yw/view?usp=sharing
+  - [Video Demo](https://drive.google.com/file/d/1mfJ8dyLgzGOlbFWd3mXdzOBdqipK88Yw/view?usp=sharing)
 
 ## Technology Used
   - React
