@@ -7,8 +7,10 @@ The results will display along with options to read each artcle (links to the NY
 
 The Saved Articles section of the page shows the same article detail (headline, publication date/time, and Read button) as the Results display, as well as a button to delete the article, which will remove the article from the page (and our database).
 
-## Video Demo
-  - Coming Soon!
+## Video Demo and App Images
+  - [Search Results Screenshot](screenshots/NYT_Search_SavedArticles.png)
+  - [Saved Articles Screenshot](screenshots/NYT_Search_SavedArticles.png)
+  - Video Demo: https://drive.google.com/file/d/1mfJ8dyLgzGOlbFWd3mXdzOBdqipK88Yw/view?usp=sharing
 
 ## Technology Used
   - React
