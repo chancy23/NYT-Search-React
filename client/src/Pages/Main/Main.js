@@ -64,6 +64,7 @@ class Main extends Component {
   handleSaveArticle = (id) => {
     //this gets the props._id for the article that the button was clicked on and grabs the data associated with it
     const findArticleByID = this.state.results.find((el) => el._id === id);
+    console.log('findarticle by id', findArticleByID);
     const articleToSave = { title: findArticleByID.headline.main, url: findArticleByID.web_url, date: findArticleByID.pub_date };
     console.log('article to save data', articleToSave);
     //call api method to save article (need to send the articles headline, link, and pub date)

@@ -5,7 +5,7 @@ import axios from 'axios';
 export default {
   // call to the NYT api when using search
   getArticles: (query, startYear, endYear) => {
-    const apiKey = "api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931";
+    const apiKey = "api-key=N5P6S7I1ytguwuyoVy2i2g4Qzmtduo3Q";
     return axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?' + apiKey + '&q=' + query + '&begin_date=' + startYear + '&end_date=' + endYear)
   },
   //add article to the db
